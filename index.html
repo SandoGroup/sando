@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto Fetch from Apps Script</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+  </style>
+</head>
+<body>
+  <div id="output">Loading...</div>
+
+  <script>
+    async function loadData() {
+      try {
+        const response = await fetch(
+          'https://script.google.com/macros/s/AKfycbzLaeTTOFofyu6-2R_9vzd3mG1FDn6sm7_GbkpVrpDmPCUzmB2QgrlCOHibKt0bEKwu/exec'
+        );
+        const data = await response.json();
+        document.getElementById('output').innerText = JSON.stringify(data, null, 2);
+      } catch (error) {
+        document.getElementById('output').innerText = 'Error loading data: ' + error;
+      }
+    }
+
+    window.onload = loadData;
+  </script>
+</body>
+</html>
