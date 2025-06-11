@@ -14,10 +14,11 @@
   <script>
     async function loadData() {
       try {
-        const response = await fetch(
-          'https://script.google.com/macros/s/AKfycbw-kxq4rygd4aRnf9v5B0TDRngng2B2b4DmMggsBVX6Rk-ujtYHozyAEcosiz95LrYs/exec'
-        );
-        const data = await response.json();
+       const response = await fetch(
+  'https://script.google.com/macros/s/AKfycbzLaeTTOFofyu6-2R_9vzd3mG1FDn6sm7_GbkpVrpDmPCUzmB2QgrlCOHibKt0bEKwu/exec?type=json'
+);
+const data = await response.json();
+
         document.getElementById('output').innerText = JSON.stringify(data, null, 2);
       } catch (error) {
         document.getElementById('output').innerText = 'Error loading data: ' + error;
