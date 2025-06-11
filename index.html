@@ -10,17 +10,12 @@
       padding: 0;
       height: 100%;
       width: 100%;
-      overflow: hidden;
+      overflow: auto; /* Allow scrolling if needed */
     }
     .iframe-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      width: 100vw;
+      width: 100%;
       height: 100vh;
-      overflow: hidden;
+      overflow: auto; /* Allow iframe content to scroll */
     }
     .iframe-container iframe {
       width: 100%;
@@ -31,7 +26,6 @@
   </style>
 </head>
 <body>
-
   <div class="iframe-container">
     <iframe 
       src="https://script.google.com/macros/s/AKfycbzLaeTTOFofyu6-2R_9vzd3mG1FDn6sm7_GbkpVrpDmPCUzmB2QgrlCOHibKt0bEKwu/exec"
@@ -39,6 +33,5 @@
       allowfullscreen>
     </iframe>
   </div>
-
 </body>
 </html>
