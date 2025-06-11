@@ -10,15 +10,16 @@
   <div id="output"></div>
 
   <script>
-    fetch("https://script.google.com/macros/s/AKfycbzLaeTTOFofyu6-2R_9vzd3mG1FDn6sm7_GbkpVrpDmPCUzmB2QgrlCOHibKt0bEKwu/exec")
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById("output").innerText = JSON.stringify(data, null, 2);
-      })
-      .catch(err => {
-        console.error(err);
-        document.getElementById("output").innerText = "Error loading data.";
-      });
-  </script>
+  fetch("https://script.google.com/macros/s/YOUR_NEW_DEPLOYMENT_ID/exec?type=json")
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("output").innerText = JSON.stringify(data, null, 2);
+    })
+    .catch(err => {
+      console.error(err);
+      document.getElementById("output").innerText = "Error loading data.";
+    });
+</script>
+
 </body>
 </html>
