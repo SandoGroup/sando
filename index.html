@@ -14,13 +14,11 @@
   <script>
   async function loadData() {
     try {
-      const response = await fetch(
-  'https://script.google.com/macros/s/AKfycbw-3jYPpykYSOYUI6wgLo2ksH0HkKnyZrFELkVMQZGc_MK-7nN0DvT2BYmhHVqcZxb4/exec?type=json'
+     const response = await fetch(
+  'https://corsproxy.io/?https://script.google.com/macros/s/AKfycbzw-WsPC81vFYPvulY7bqfAtHJsYRCAYDz-vLeLCN2X3A9rWv6hmoqbaf7sJzX23Xxn/exec?type=json'
 );
 const data = await response.json();
-
-      const data = await response.json();
-      document.getElementById('output').innerText = JSON.stringify(data, null, 2);
+document.getElementById('output').innerText = JSON.stringify(data, null, 2);
     } catch (error) {
       document.getElementById('output').innerText = 'Error loading data: ' + error;
     }
