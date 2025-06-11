@@ -10,7 +10,7 @@
       padding: 0;
       height: 100%;
       width: 100%;
-      overflow: auto; /* Allow scrolling if needed */
+      overflow: auto; /* Allow scrolling */
     }
     .iframe-container {
       width: 100%;
@@ -23,6 +23,16 @@
       border: none;
       display: block;
     }
+    /* Ensure chatbot visibility on mobile */
+    @media screen and (max-width: 768px) {
+      .iframe-container {
+        height: auto; /* Allow content to expand */
+        min-height: 100vh;
+      }
+      .iframe-container iframe {
+        min-height: 100vh;
+      }
+    }
   </style>
 </head>
 <body>
@@ -30,7 +40,8 @@
     <iframe 
       src="https://script.google.com/macros/s/AKfycbzLaeTTOFofyu6-2R_9vzd3mG1FDn6sm7_GbkpVrpDmPCUzmB2QgrlCOHibKt0bEKwu/exec"
       loading="lazy"
-      allowfullscreen>
+      allowfullscreen
+      scrolling="yes"> <!-- Enable scrolling -->
     </iframe>
   </div>
 </body>
